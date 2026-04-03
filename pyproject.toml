@@ -1,0 +1,32 @@
+[project]
+name = "learning"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "fenn[rich,torch]",
+    "matplotlib>=3.10.8",
+    "rich>=13.0.1",
+    "tqdm>=4.67.3",
+    "ucimlrepo>=0.0.7",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.4",
+    "ty>=0.0.20",
+]
+torch = [
+    "torch~=2.10.0",
+    "torchvision~=0.25.0",
+]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "Q"]
+
+[tool.uv.sources]
+fenn = { path = "../fenn", editable = true }
+
+[tool.ruff]
+include = ["pyproject.toml", "toys/**/*.py"]

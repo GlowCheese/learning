@@ -1,0 +1,31 @@
+# ---------------------------------------
+# Fenn Configuration (Modify Carefully)
+# ---------------------------------------
+
+project: mnist_cnn
+
+logger:
+  dir: logger
+
+# ---------------------------------------
+# User Section
+# ---------------------------------------
+general:
+  device: cuda
+
+checkpoint:
+  name: mnist_cnn
+  dir: ./models
+  path: ./models/mnist_cnn_best.pt
+
+train:
+  seed: 42
+  batch: 64
+  epochs: 20
+  lr: 0.001
+
+test:
+  batch: 64
+
+val:
+  batch: 64
